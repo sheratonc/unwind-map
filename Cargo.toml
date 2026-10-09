@@ -1,0 +1,16 @@
+[package]
+name = "unwind-map"
+version = "0.1.0"
+edition = "2024"
+description = "Recover function boundaries from stripped ELF binaries using their .eh_frame unwind tables."
+license = "MIT"
+repository = "https://github.com/td185721/unwind-map"
+readme = "README.md"
+keywords = ["elf", "reverse-engineering", "eh-frame", "binary-analysis", "linux"]
+categories = ["command-line-utilities", "development-tools::debugging"]
+
+[dependencies]
+
+[profile.release]
+lto = true
+codegen-units = 1

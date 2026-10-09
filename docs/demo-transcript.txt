@@ -1,0 +1,25 @@
+$ file ./target
+./target: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, stripped
+$ unwind-map ./target
+./target: ELF64 x86-64 DYN, entry 0x0000000000017d00
+unwind tables: .eh_frame at 0x00000000000108c0 (0x6440 bytes), 2 CIEs, 578 FDEs
+
+START               END                     SIZE  FLAGS NAME
+0x0000000000017f20  0x0000000000017f89       105  -     sub_17f20
+0x0000000000017f90  0x0000000000017fc1        49  -     sub_17f90
+0x0000000000017fd0  0x0000000000018060       144  -     sub_17fd0
+0x0000000000018060  0x00000000000181dd       381  -     sub_18060
+0x00000000000181e0  0x00000000000181f1        17  -     sub_181e0
+0x0000000000018200  0x0000000000018235        53  -     sub_18200
+0x0000000000018238  0x000000000001823d         5  -     sub_18238
+...
+
+578 functions (0 named, 578 unnamed), covering 91.9% of 405.9 KiB of executable code
+5 regions of executable code have no unwind info (29.2 KiB); list with --gaps
+$ unwind-map -f objcopy ./target > syms.txt && objcopy @syms.txt ./target ./target.sym
+$ file ./target.sym
+./target.sym: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, not stripped
+$ nm -n ./target.sym | head -3
+0000000000017f20 t sub_17f20
+0000000000017f90 t sub_17f90
+0000000000017fd0 t sub_17fd0
