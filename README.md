@@ -1,6 +1,6 @@
 # unwind-map
 
-[![CI](https://github.com/sheranton/unwind-map/actions/workflows/ci.yml/badge.svg)](https://github.com/sheranton/unwind-map/actions/workflows/ci.yml)
+[![CI](https://github.com/sheratonc/unwind-map/actions/workflows/ci.yml/badge.svg)](https://github.com/sheratonc/unwind-map/actions/workflows/ci.yml)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Rust 2024](https://img.shields.io/badge/rust-2024_edition-dea584?logo=rust&logoColor=white)
 ![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg)
@@ -52,7 +52,7 @@ unwind-map --format svg ./app > app-map.svg
 ## Install
 
 ```sh
-cargo install --git https://github.com/sheranton/unwind-map
+cargo install --git https://github.com/sheratonc/unwind-map
 ```
 
 or build from a clone with `cargo build --release`.
@@ -184,7 +184,7 @@ The fixtures are tiny freestanding programs, cross-linked with `rust-lld` for ea
 
 ## See also
 
-`unwind-map` is the Linux counterpart to my Windows tools. [rtti-dump](https://github.com/sheranton/rtti-dump) and [vtable-dump](https://github.com/sheranton/vtable-dump) recover C++ class structure from MSVC binaries in the same spirit: they read metadata the compiler had to leave in the binary instead of guessing.
+`unwind-map` is the Linux counterpart to my Windows tools. [rtti-dump](https://github.com/sheratonc/rtti-dump) and [vtable-dump](https://github.com/sheratonc/vtable-dump) recover C++ class structure from MSVC binaries in the same spirit: they read metadata the compiler had to leave in the binary instead of guessing.
 
 ## License
 
